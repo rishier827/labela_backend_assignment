@@ -16,3 +16,28 @@ class CartDetailsAPIView(APIView):
         serializer = CartSerializer(cart, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
+class AddToCartAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        '''
+        Add a product to cart
+        '''
+        cart = Cart.objects.get(user=request.user)
+        cart.products.add(request.data.get('product_id'))
+        cart.save()
+        serializer = CartSerializer(cart, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
+class RemoveFromCartAPIView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        '''
+        Remove a product from cart
+        '''
+        cart = Cart.objects.get(user=request.user)
+        cart.products.remove(request.data.get('product_id'))
+        cart.save()
+        serializer = CartSerializer(cart, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
