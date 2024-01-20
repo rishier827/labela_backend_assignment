@@ -1,5 +1,5 @@
 from rest_framework.views import APIView
-from rest_framework import permissions, status
+from rest_framework import permissions, status, authentication
 from rest_framework.response import Response
 
 from .models import Order
@@ -7,6 +7,7 @@ from .serializers import OrderSerializer
 from carts.models import Cart
 
 class OrdersListAPIView(APIView):
+    authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
@@ -42,6 +43,7 @@ class OrdersListAPIView(APIView):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
 class CancelOrderAPIView(APIView):
+    authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
