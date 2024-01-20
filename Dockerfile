@@ -39,5 +39,6 @@ RUN chmod +x /wait-for-postgres.sh
 CMD /wait-for-postgres.sh db set -xe; \
     python3 manage.py collectstatic --noinput --clear; \
     python3 manage.py migrate --noinput; \
+    python3 manage.py loaddata fixtures/*.json; \
     python manage.py createadmin --username 'superadmin' --password '1234' --email 'superadmin@example.com'; \
     python manage.py runserver 0.0.0.0:8000
