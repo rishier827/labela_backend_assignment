@@ -33,13 +33,14 @@ class OrdersListAPIView(APIView):
         except Cart.DoesNotExist:
             return Response({'message': 'Cart not found'}, status=status.HTTP_404_NOT_FOUND)
         
-        order = Order.objects.create(user=request.user, cart_items=cart.products.all(), deliver_at=deliver_at)
+        order = Order.objects.create(user=request.user, deliver_at=deliver_at)
+        order.cart_items.set(cart.products.all())
         order.save()
 
         cart.products.clear()
-        cart.save()
+        cart.refresh_from_db()  # Refresh the cart instance
 
-        serializer = OrderSerializer(order, many=False)
+        serializer = OrderSerializer(order)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
 class CancelOrderAPIView(APIView):
