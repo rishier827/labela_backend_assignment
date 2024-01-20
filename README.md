@@ -7,6 +7,12 @@
 
 ## Setup Guide
 
+To start the app using docker run: 
+    ```bash
+    docker-compose up
+    ```
+OR
+
 To setup this project locally, use Python virtual environment. 
 
 1. Create a virtual environment:
@@ -50,6 +56,8 @@ To setup this project locally, use Python virtual environment.
 
 ## MVP Prioritization and Covered Endpoints
 
+**Note:** In the implementation, there are more API endpoints than those listed below. These additional endpoints are included in the JSON file located at `https://github.com/rishier827/labela_backend_assignment/blob/main/Stekz.postman_collection.json`. You can import this file into Postman or any other API testing tool to test the API endpoints. That includes endpoints for signup and login.
+
 1. **As a company, I want all my products in a database:**
     - API Endpoint: `POST /products`
     - Description: Allows the company to add products to the database.
@@ -73,3 +81,5 @@ To setup this project locally, use Python virtual environment.
 6. **As a client, I want to order the current contents in my shopping cart/As a client, I want to select a delivery date and time:**
     - API Endpoint: `POST /orders`
     - Description: Allows clients to place an order based on the items in their shopping cart with delivery date.
+
+  
