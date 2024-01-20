@@ -7,15 +7,12 @@ from .serializers import ProductSerializer
 
 class ProductListApiView(APIView):
 
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get(self, request):
-        '''
-        List all products
-        '''
-        products = Product.objects.all()
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+    def get_permissions(self):
+        if self.request.method != 'GET':
+            self.permission_classes = [permissions.IsAuthenticated,]
+        else:
+            self.permission_classes = [permissions.AllowAny,]
+        return super(ProductListApiView, self).get_permissions()
     
     def post(self, request):
         '''
@@ -35,9 +32,22 @@ class ProductListApiView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED) 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def get(self, request):
+        '''
+        List all products
+        '''
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    
 class ProductDetailsApiView(APIView):
 
-    permission_classes = [permissions.IsAuthenticated]
+    def get_permissions(self):
+        if self.request.method != 'GET':
+            self.permission_classes = [permissions.IsAuthenticated,]
+        else:
+            self.permission_classes = [permissions.AllowAny,]
+        return super(ProductDetailsApiView, self).get_permissions()
 
     def get_object(self, product_id):
         '''
