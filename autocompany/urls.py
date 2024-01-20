@@ -17,10 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from products import urls as products_urls
 from carts import urls as carts_urls 
+from users import urls as users_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('products/', include(products_urls)),
-    path('cart', include(carts_urls)),
+    path('cart/', include(carts_urls)),
+    path('users/', include(users_urls)),
 ]

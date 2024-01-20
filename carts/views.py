@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 
 from .models import Cart
 from .serializers import CartSerializer
+
 class CartDetailsAPIView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
