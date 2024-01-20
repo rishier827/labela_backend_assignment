@@ -30,11 +30,6 @@ ENV DB_PASSWORD=postgres
 ENV DB_HOST=db
 ENV DB_PORT=5432
 
-# Create superuser params
-ENV DJANGO_SUPERUSER_USERNAME=admin
-ENV DJANGO_SUPERUSER_PASSWORD=123@QWEasd
-ENV DJANGO_SUPERUSER_EMAIL=admin@example.com
-
 EXPOSE ${PORT}
 
 # Make the wait-for-postgres.sh script executable
