@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from rest_framework import permissions, status
+from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework import permissions
+
 from .models import Product
 from .serializers import ProductSerializer
-from rest_framework.response import Response
-from rest_framework import status
 
 class ProductListApiView(APIView):
 
@@ -35,4 +34,53 @@ class ProductListApiView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED) 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class ProductDetailsApiView(APIView):
+
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get_object(self, product_id):
+        '''
+        Get a product
+        '''
+        try:
+            return Product.objects.get(id=product_id)
+        except Product.DoesNotExist:
+            return None
+
+    def get(self, request, product_id):
+        '''
+        Get a product
+        '''
+        product = self.get_object(product_id)
+        if product is not None:
+            serializer = ProductSerializer(product)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def put(self, request, product_id):
+        '''
+        Update a product
+        '''
+        product = Product.objects.get(id=product_id)
+        data = {
+            'category': request.data.get('category'),
+            'name': request.data.get('name'),
+            'price': request.data.get('price'),
+            'description': request.data.get('description'),
+            'image': request.data.get('image'),
+            'is_active': request.data.get('is_active')
+        }
+        serializer = ProductSerializer(product, data = data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK) 
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
+    def delete(self, request, product_id):
+        '''
+        Delete a product
+        '''
+        product = Product.objects.get(id=product_id)
+        product.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
