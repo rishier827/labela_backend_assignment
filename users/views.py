@@ -5,7 +5,8 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import User
+from django.contrib.auth.models import User
+
 class ObtainAuthToken(APIView):
     def post(self, request):
         username = request.data.get('username')

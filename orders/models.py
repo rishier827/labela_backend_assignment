@@ -1,7 +1,8 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Order(models.Model):
-    user = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     cart_items = models.ManyToManyField('products.Product')
     deliver_at = models.DateTimeField(null=True)
     is_delivered = models.BooleanField(default=False)
