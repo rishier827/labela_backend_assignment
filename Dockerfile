@@ -37,6 +37,12 @@ ENV DJANGO_SUPERUSER_EMAIL=admin@example.com
 
 EXPOSE ${PORT}
 
-CMD python manage.py migrate && \
-    uwsgi --http :${PORT} --processes ${WORKERS} --static-map /static=/static --module autocompany.wsgi:application && \
-    python manage.py runserver
+# Make the wait-for-postgres.sh script executable
+COPY ./wait-for-postgres.sh /wait-for-postgres.sh
+RUN chmod +x /wait-for-postgres.sh
+
+CMD /wait-for-postgres.sh db set -xe; \
+    python3 manage.py collectstatic --noinput --clear; \
+    python3 manage.py migrate --noinput; \
+    python manage.py createadmin --username 'superadmin' --password '1234' --email 'superadmin@example.com'; \
+    python manage.py runserver 0.0.0.0:8000
