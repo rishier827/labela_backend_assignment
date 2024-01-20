@@ -1,4 +1,5 @@
 # MVP Prioritization and covered endpoints:
+
 1. As a company, I want all my products in a database:
 
 API Endpoint: POST /products
@@ -24,12 +25,7 @@ Description: Allows clients to add a product to their shopping cart.
 API Endpoint: POST /cart/remove
 Description: Enables clients to remove a product from their shopping cart.
 
-6. As a client, I want to order the current contents in my shopping cart:
+6. As a client, I want to order the current contents in my shopping cart/As a client, I want to select a delivery date and time::
 
 API Endpoint: POST /orders
-Description: Allows clients to place an order based on the items in their shopping cart.
-
-7. As a client, I want to select a delivery date and time:
-
-API Endpoint: POST /orders/{orderId}/schedule
-Description: Allows clients to choose a delivery date and time for their order.
+Description: Allows clients to place an order based on the items in their shopping cart with delivery date.
