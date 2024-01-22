@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 
 from .models import Cart, CartProduct
 from products.models import Product
-from .serializers import CartSerializer
+from .serializers import AddToCartSerializer, CartSerializer
 
 class CartDetailsAPIView(APIView):
     authentication_classes = [authentication.TokenAuthentication]
@@ -27,20 +27,20 @@ class AddToCartAPIView(APIView):
         '''
         Add a product to cart
         '''
-        product_id = request.data.get('product_id')
-        quantity = request.data.get('quantity')
+        serializer = AddToCartSerializer(data=request.data)
+        if serializer.is_valid():
+            product_id = serializer.validated_data.get('product_id')
+            quantity = serializer.validated_data.get('quantity')
 
-        if product_id is None or quantity is None:
-            return Response({'message': 'Product id and quantity are required'}, status=status.HTTP_400_BAD_REQUEST)
-        
-        cart, created = Cart.objects.get_or_create(user=request.user)
-        product = get_object_or_404(Product, id=product_id)
+            cart, created = Cart.objects.get_or_create(user=request.user)
+            product = get_object_or_404(Product, id=product_id)
 
-        cart_item, created = CartProduct.objects.get_or_create(cart=cart, quantity=quantity, product=product)
-        cart_item.save()
+            cart_item, created = CartProduct.objects.get_or_create(cart=cart, quantity=quantity, product=product)
+            cart_item.save()
 
-        serializer = CartSerializer(cart)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+            serializer = CartSerializer(cart)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 class RemoveFromCartAPIView(APIView):
     authentication_classes = [authentication.TokenAuthentication]
@@ -50,10 +50,23 @@ class RemoveFromCartAPIView(APIView):
         '''
         Remove a product from cart
         '''
-        if (request.data.get('product_id') is None):
-            return Response({'message': 'Product id is required'}, status=status.HTTP_400_BAD_REQUEST)  
+        product_id = request.data.get('product_id')
+
+        if product_id is None:
+            return Response({'message': 'Product id is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            product = Product.objects.get(id=product_id)
+        except Product.DoesNotExist:
+            return Response({'message': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
+
         cart = Cart.objects.get(user=request.user)
-        cart.products.remove(request.data.get('product_id'))
+
+        if not cart.products.filter(id=product_id).exists():
+            return Response({'message': 'Product not in cart'}, status=status.HTTP_400_BAD_REQUEST)
+
+        cart.products.remove(product)
         cart.save()
+
         serializer = CartSerializer(cart, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
