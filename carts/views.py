@@ -40,13 +40,13 @@ class AddToCartAPIView(APIView):
         cart_item.save()
 
         serializer = CartSerializer(cart)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     
 class RemoveFromCartAPIView(APIView):
     authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
 
-    def post(self, request):
+    def delete(self, request):
         '''
         Remove a product from cart
         '''
