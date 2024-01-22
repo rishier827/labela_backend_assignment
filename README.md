@@ -61,6 +61,7 @@ To setup this project locally, use Python virtual environment.
 1. **As a company, I want all my products in a database:**
     - API Endpoint: `POST /products`
     - Description: Allows the company to add products to the database.
+    - Must log in as a staff member, use default super admin credentials (username : 'superadmin', password: '1234' )
 
 2. **As a client, I want to see an overview of all the products:**
     - API Endpoint: `GET /products`
@@ -75,7 +76,7 @@ To setup this project locally, use Python virtual environment.
     - Description: Allows clients to add a product to their shopping cart.
 
 5. **As a client, I want to remove a product from my shopping cart:**
-    - API Endpoint: `POST /cart/remove`
+    - API Endpoint: `DELETE /cart/remove`
     - Description: Enables clients to remove a product from their shopping cart.
 
 6. **As a client, I want to order the current contents in my shopping cart/As a client, I want to select a delivery date and time:**
