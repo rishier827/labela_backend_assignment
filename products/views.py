@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.pagination import PageNumberPagination
 
 from .models import Product
-from .serializers import ProductSerializer
+from .serializers import ProductCreateSerializer, ProductSerializer, ProductUpdateSerializer
 
 class CustomPagination(PageNumberPagination):
     page_size = 10 
@@ -22,15 +22,7 @@ class ProductListApiView(APIView):
         '''
         Create a product
         '''
-        data = {
-            'category': request.data.get('category'),
-            'name': request.data.get('name'),
-            'price': request.data.get('price'),
-            'description': request.data.get('description'),
-            'image': request.data.get('image'),
-            'is_active': request.data.get('is_active')
-        }
-        serializer = ProductSerializer(data = data)
+        serializer = ProductCreateSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED) 
@@ -79,15 +71,7 @@ class ProductDetailsApiView(APIView):
         Update a product
         '''
         product = Product.objects.get(id=product_id)
-        data = {
-            'category': request.data.get('category'),
-            'name': request.data.get('name'),
-            'price': request.data.get('price'),
-            'description': request.data.get('description'),
-            'image': request.data.get('image'),
-            'is_active': request.data.get('is_active')
-        }
-        serializer = ProductSerializer(product, data = data)
+        serializer = ProductUpdateSerializer(product, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK) 
