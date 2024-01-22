@@ -3,6 +3,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.pagination import PageNumberPagination
 
+from products.staff_permission import IsStaff
+
 from .models import Product
 from .serializers import ProductCreateSerializer, ProductSerializer, ProductUpdateSerializer
 
@@ -11,10 +13,11 @@ class CustomPagination(PageNumberPagination):
 
 class ProductListApiView(APIView):
 
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated, IsStaff]
+
     def get_permissions(self):
-        if self.request.method != 'GET':
-            self.permission_classes = [permissions.IsAuthenticated,]
-        else:
+        if self.request.method == 'GET':
             self.permission_classes = [permissions.AllowAny,]
         return super(ProductListApiView, self).get_permissions()
     
@@ -40,10 +43,11 @@ class ProductListApiView(APIView):
     
 class ProductDetailsApiView(APIView):
 
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated, IsStaff]
+
     def get_permissions(self):
-        if self.request.method != 'GET':
-            self.permission_classes = [permissions.IsAuthenticated,]
-        else:
+        if self.request.method == 'GET':
             self.permission_classes = [permissions.AllowAny,]
         return super(ProductDetailsApiView, self).get_permissions()
 

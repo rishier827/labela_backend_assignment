@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"nishRam\",\n    \"password\": \"123@QWEasd\",\n    \"email\": \"ram@email.com\"\n}",
+							"raw": "{\n    \"username\": \"nish\",\n    \"password\": \"123@QWEasd\",\n    \"email\": \"ram@email.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -127,7 +127,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"nishRam\",\n    \"password\": \"123@QWEasd\"\n}",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"1234\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -288,7 +288,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jan 2024 17:12:34 GMT"
+									"value": "Mon, 22 Jan 2024 16:49:30 GMT"
 								},
 								{
 									"key": "Server",
@@ -300,7 +300,7 @@
 								},
 								{
 									"key": "Vary",
-									"value": "Accept, Cookie"
+									"value": "Accept"
 								},
 								{
 									"key": "Allow",
@@ -312,7 +312,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1105"
+									"value": "1254"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -328,7 +328,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Headlight - Toyota Vits\",\n        \"description\": \"Test description for item\",\n        \"price\": 200000,\n        \"category\": \"Cars\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"ABS-Volvo V8\",\n        \"description\": \"ABS brakes\",\n        \"price\": 10000,\n        \"category\": \"Cars\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Side Mirror - Suzuki Wagon R\",\n        \"description\": \"L/R Side mirrors\",\n        \"price\": 80000,\n        \"category\": \"Cars\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"anti theft alarm - Mercedes Benz 3 series\",\n        \"description\": \"Anti theft alarm of Mercedez Benz 300\",\n        \"price\": 100000,\n        \"category\": \"Vans\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Parking Assistance-Toyota Hiace\",\n        \"description\": \"Toyota Hiace vans Parking assistance\",\n        \"price\": 30000,\n        \"category\": \"Vans\"\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Rain Sensors - Volvo XC90\",\n        \"description\": \"Rain sesors of XC90 Volvo\",\n        \"price\": 40000,\n        \"category\": \"Vans\"\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Dashcam-Peugot 308\",\n        \"description\": \"Front and rear dashcam\",\n        \"price\": 13000,\n        \"category\": \"Cars\"\n    },\n    {\n        \"id\": 8,\n        \"name\": \"heated steering wheel - Porsche Tycan\",\n        \"description\": \"Porsche Tycan's heated steering wheel\",\n        \"price\": 80000,\n        \"category\": \"Cars\"\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Airbag frontal - Volkswagen ID.Buzz\",\n        \"description\": \"Airbag frontal of Volkswagen Van\",\n        \"price\": 70000,\n        \"category\": \"Vans\"\n    }\n]"
+							"body": "{\n    \"count\": 10,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"name\": \"Headlight - Toyota Vits\",\n            \"description\": \"Test description for item\",\n            \"price\": 200000,\n            \"category\": \"Cars\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ABS-Volvo V8\",\n            \"description\": \"ABS brakes\",\n            \"price\": 10000,\n            \"category\": \"Cars\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Side Mirror - Suzuki Wagon R\",\n            \"description\": \"L/R Side mirrors\",\n            \"price\": 80000,\n            \"category\": \"Cars\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"anti theft alarm - Mercedes Benz 3 series\",\n            \"description\": \"Anti theft alarm of Mercedez Benz 300\",\n            \"price\": 100000,\n            \"category\": \"Vans\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Parking Assistance-Toyota Hiace\",\n            \"description\": \"Toyota Hiace vans Parking assistance\",\n            \"price\": 30000,\n            \"category\": \"Vans\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Rain Sensors - Volvo XC90\",\n            \"description\": \"Rain sesors of XC90 Volvo\",\n            \"price\": 40000,\n            \"category\": \"Vans\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Dashcam-Peugot 308\",\n            \"description\": \"Front and rear dashcam\",\n            \"price\": 13000,\n            \"category\": \"Cars\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"heated steering wheel - Porsche Tycan\",\n            \"description\": \"Porsche Tycan's heated steering wheel\",\n            \"price\": 80000,\n            \"category\": \"Cars\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Airbag frontal - Volkswagen ID.Buzz\",\n            \"description\": \"Airbag frontal of Volkswagen Van\",\n            \"price\": 70000,\n            \"category\": \"Vans\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Car Break Oil\",\n            \"description\": \"Test description\",\n            \"price\": 10000,\n            \"category\": \"Cars\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -432,10 +432,16 @@
 					"name": "Add Product",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 0c1c89596cb834d1c5351eac7524ea1613858f61",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"category\": 1,\n    \"name\": \"Car Engine Oil\",\n    \"price\": 10000,\n    \"description\": \"Test description\",\n    \"is_active\": true\n}",
+							"raw": "{\n    \"category\": 1,\n    \"name\": \"Car Break Oil\",\n    \"price\": 10000,\n    \"description\": \"Test description\",\n    \"is_active\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -459,7 +465,92 @@
 						},
 						"description": "For this API users should log into the django admin as a cms user.  \nCan use,  \nUsername - superadmin\n\nPassword - 1234  \n  \nas credentials"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Add Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 0c1c89596cb834d1c5351eac7524ea1613858f61",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": 1,\n    \"name\": \"Car Break Oil\",\n    \"price\": 10000,\n    \"description\": \"Test description\",\n    \"is_active\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/products/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"products",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 22 Jan 2024 16:44:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.6"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category\": 1,\n    \"name\": \"Car Break Oil\",\n    \"price\": 10000,\n    \"description\": \"Test description\",\n    \"image\": null,\n    \"is_active\": true\n}"
+						}
+					]
 				}
 			]
 		},
@@ -473,7 +564,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token  a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+								"value": "Token  b57de239342b04c0908588e619983625cff08e68",
 								"type": "text"
 							}
 						],
@@ -502,7 +593,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Token  a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+										"value": "Token  b57de239342b04c0908588e619983625cff08e68",
 										"type": "text"
 									}
 								],
@@ -528,7 +619,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jan 2024 17:18:02 GMT"
+									"value": "Mon, 22 Jan 2024 16:50:59 GMT"
 								},
 								{
 									"key": "Server",
@@ -552,7 +643,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "142"
+									"value": "579"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -568,7 +659,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 34,\n        \"user\": 6,\n        \"deliver_at\": \"2024-12-12T00:00:00Z\",\n        \"created_at\": \"2024-01-20T17:17:45.300552Z\",\n        \"updated_at\": \"2024-01-20T17:17:45.329749Z\"\n    }\n]"
+							"body": "[\n    {\n        \"id\": 36,\n        \"user\": 7,\n        \"deliver_at\": \"2024-12-31T23:59:59Z\",\n        \"created_at\": \"2024-01-22T15:07:35.776566Z\",\n        \"updated_at\": \"2024-01-22T15:07:35.782306Z\",\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Headlight - Toyota Vits\",\n                \"description\": \"Test description for item\",\n                \"price\": 200000\n            }\n        ]\n    },\n    {\n        \"id\": 37,\n        \"user\": 7,\n        \"deliver_at\": \"2024-12-31T23:59:59Z\",\n        \"created_at\": \"2024-01-22T15:12:57.499265Z\",\n        \"updated_at\": \"2024-01-22T15:12:57.509245Z\",\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Headlight - Toyota Vits\",\n                \"description\": \"Test description for item\",\n                \"price\": 200000\n            },\n            {\n                \"id\": 2,\n                \"name\": \"ABS-Volvo V8\",\n                \"description\": \"ABS brakes\",\n                \"price\": 10000\n            }\n        ]\n    }\n]"
 						}
 					]
 				},
@@ -579,13 +670,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+								"value": "Token b57de239342b04c0908588e619983625cff08e68",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"cart_id\": 2,\n    \"deliver_at\": \"2024-12-12\"\n}",
+							"raw": "{\n    \"deliver_at\": \"2024-12-31T23:59:59\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -617,13 +708,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Token a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+										"value": "Token b57de239342b04c0908588e619983625cff08e68",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"cart_id\": 2,\n    \"deliver_at\": \"2024-12-12\"\n}",
+									"raw": "{\n    \"deliver_at\": \"2024-12-31T23:59:59\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -652,7 +743,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jan 2024 17:17:45 GMT"
+									"value": "Mon, 22 Jan 2024 15:12:57 GMT"
 								},
 								{
 									"key": "Server",
@@ -676,7 +767,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "130"
+									"value": "323"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -692,7 +783,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 34,\n    \"user\": 6,\n    \"deliver_at\": \"2024-12-12\",\n    \"created_at\": \"2024-01-20T17:17:45.300552Z\",\n    \"updated_at\": \"2024-01-20T17:17:45.329749Z\"\n}"
+							"body": "{\n    \"id\": 37,\n    \"user\": 7,\n    \"deliver_at\": \"2024-12-31T23:59:59\",\n    \"created_at\": \"2024-01-22T15:12:57.499265Z\",\n    \"updated_at\": \"2024-01-22T15:12:57.509245Z\",\n    \"products\": [\n        {\n            \"id\": 1,\n            \"name\": \"Headlight - Toyota Vits\",\n            \"description\": \"Test description for item\",\n            \"price\": 200000\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ABS-Volvo V8\",\n            \"description\": \"ABS brakes\",\n            \"price\": 10000\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -709,7 +800,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"order_id\": 34\n}",
+							"raw": "{\n    \"order_id\": 35\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -834,7 +925,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+								"value": "Token b57de239342b04c0908588e619983625cff08e68",
 								"type": "text"
 							}
 						],
@@ -863,7 +954,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Token a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+										"value": "Token b57de239342b04c0908588e619983625cff08e68",
 										"type": "text"
 									}
 								],
@@ -889,7 +980,7 @@
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jan 2024 17:17:06 GMT"
+									"value": "Mon, 22 Jan 2024 15:04:53 GMT"
 								},
 								{
 									"key": "Server",
@@ -929,7 +1020,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 2,\n    \"user\": 6,\n    \"products\": [\n        {\n            \"id\": 1,\n            \"name\": \"Headlight - Toyota Vits\",\n            \"price\": 200000,\n            \"description\": \"Test description for item\",\n            \"image\": null,\n            \"is_active\": true,\n            \"category\": 1\n        }\n    ]\n}"
+							"body": "{\n    \"id\": 3,\n    \"user\": 7,\n    \"products\": [\n        {\n            \"id\": 1,\n            \"name\": \"Headlight - Toyota Vits\",\n            \"price\": 200000,\n            \"description\": \"Test description for item\",\n            \"image\": null,\n            \"is_active\": true,\n            \"category\": 1\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -940,13 +1031,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Token a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+								"value": "Token b57de239342b04c0908588e619983625cff08e68",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"product_id\": 1,\n    \"quantity\": 2\n}",
+							"raw": "{\n    \"product_id\": 2,\n    \"quantity\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -979,13 +1070,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Token a1fbfb93ec50e5a3d5eecdb64f3006647a6d1214",
+										"value": "Token b57de239342b04c0908588e619983625cff08e68",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"product_id\": 1,\n    \"quantity\": 2\n}",
+									"raw": "{\n    \"product_id\": 2,\n    \"quantity\": 2\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1009,13 +1100,13 @@
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
+							"status": "Created",
+							"code": 201,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jan 2024 17:16:40 GMT"
+									"value": "Mon, 22 Jan 2024 16:52:41 GMT"
 								},
 								{
 									"key": "Server",
@@ -1039,7 +1130,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "172"
+									"value": "145"
 								},
 								{
 									"key": "X-Content-Type-Options",
@@ -1055,14 +1146,14 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 2,\n    \"user\": 6,\n    \"products\": [\n        {\n            \"id\": 1,\n            \"name\": \"Headlight - Toyota Vits\",\n            \"price\": 200000,\n            \"description\": \"Test description for item\",\n            \"image\": null,\n            \"is_active\": true,\n            \"category\": 1\n        }\n    ]\n}"
+							"body": "{\n    \"id\": 3,\n    \"user\": 7,\n    \"products\": [\n        {\n            \"id\": 2,\n            \"name\": \"ABS-Volvo V8\",\n            \"price\": 10000,\n            \"description\": \"ABS brakes\",\n            \"image\": null,\n            \"is_active\": true,\n            \"category\": 1\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
 					"name": "Remove Item from cart",
 					"request": {
-						"method": "POST",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
