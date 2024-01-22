@@ -22,16 +22,18 @@ class OrdersListAPIView(APIView):
         '''
         Create an order
         '''
-        if (request.data.get('cart_id') is None or request.data.get('deliver_at') is None):
+        if (request.data.get('deliver_at') is None):
             return Response({'message': 'Cart id is required'}, status=status.HTTP_400_BAD_REQUEST)
         
-        cart_id = request.data.get('cart_id')
         deliver_at = request.data.get('deliver_at')
 
         try:
-            cart = Cart.objects.get(id=cart_id, user=request.user)
+            cart = Cart.objects.get(user=request.user)
         except Cart.DoesNotExist:
             return Response({'message': 'Cart not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        if not cart.products.exists():  # Check if the cart is empty
+            return Response({'message': 'No items in the cart'}, status=status.HTTP_400_BAD_REQUEST)
         
         order = Order.objects.create(user=request.user, deliver_at=deliver_at)
         order.cart_items.set(cart.products.all())

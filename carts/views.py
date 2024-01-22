@@ -15,7 +15,7 @@ class CartDetailsAPIView(APIView):
         '''
         Get cart of logged in user
         '''
-        cart = Cart.objects.get(user=request.user)
+        cart, created = Cart.objects.get_or_create(user=request.user)
         serializer = CartSerializer(cart, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
