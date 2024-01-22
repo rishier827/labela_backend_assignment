@@ -1,3 +1,4 @@
+from datetime import datetime
 from rest_framework.views import APIView
 from rest_framework import permissions, status, authentication
 from rest_framework.response import Response
@@ -22,10 +23,15 @@ class OrdersListAPIView(APIView):
         '''
         Create an order
         '''
-        if (request.data.get('deliver_at') is None):
-            return Response({'message': 'Cart id is required'}, status=status.HTTP_400_BAD_REQUEST)
-        
         deliver_at = request.data.get('deliver_at')
+
+        if deliver_at is None:
+            return Response({'message': 'Deliver at is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            datetime.strptime(deliver_at, '%Y-%m-%dT%H:%M:%S')
+        except ValueError:
+            return Response({'message': 'Invalid datetime format for deliver_at'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             cart = Cart.objects.get(user=request.user)
